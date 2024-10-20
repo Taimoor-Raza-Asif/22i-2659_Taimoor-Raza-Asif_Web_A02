@@ -1,0 +1,213 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/* Container Setup */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #ddd;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+    align-items: center;
+    border-bottom: 2px solid rgb(170, 164, 164);
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        width: 250px;
+        flex-direction: column;
+        align-items: center;
+        border-right: 2px solid rgb(170, 164, 164);
+        border-bottom: none;
+    }
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: white;
+    margin: 10px 0;
+}
+
+.sidebar nav div {
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        padding: 40px;
+    }
+}
+
+/* Header */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header>input {
+    width: 70vw;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.header>button {
+    width: 20vw;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #3498db;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .header>input {
+        width: 50vw;
+    }
+
+    .header>button {
+        width: 10vw;
+    }
+}
+
+/* Weather Widget */
+.weather-widget {
+    margin-top: 10px;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .weather-widget {
+        height: 350px;
+    }
+}
+
+/* 5-Day Forecast */
+.forecast-container {
+    margin-top: 20px;
+}
+
+.forecast-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .forecast-grid {
+        flex-direction: row;
+    }
+}
+
+.forecast-item {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .forecast-item {
+        width: 100px;
+        height: 200px;
+    }
+}
+
+.forecast-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Chart Container */
+.charts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+    width: 100%; /* Make sure the container takes up full width */
+}
+
+@media (min-width: 768px) {
+    .charts {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* Ensure the canvas resizes properly */
+canvas {
+    width: 300px !important; /* Canvas takes up full width of its container */
+    height: 300px !important; /* Allow the height to scale proportionally */
+}
+
+/* Optional: Additional media query for even smaller screens */
+@media (max-width: 480px) {
+    canvas {
+        height: 250px !important; /* Set a smaller height for small screens */
+    }
+}

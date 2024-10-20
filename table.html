@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <link rel="stylesheet" href="table-styles.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Weather App</div>
+            <nav>
+                <div><a href="index.html" id="dashboard-link">Dashboard</a></div>
+                <div> <a href="table.html" id="tables-link">Tables</a></div>
+            </nav>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <input type="text" id="city-input" placeholder="Search city..." />
+                <button onclick="getWeather()">Get Weather</button>
+            </div>
+            <div class="side-by-side">
+                <div class="table-container">
+                    <div class="filters">
+                        <button onclick="sortTemperature('asc')">Sort by Temperature (Ascending)</button>
+                        <button onclick="sortTemperature('desc')">Sort by Temperature (Descending)</button>
+                        <button onclick="filterRainyDays()">Filter Rainy Days</button>
+                        <button onclick="showHighestTemperature()">Show Highest Temperature</button>
+                    </div>
+                
+                    <table id="weather-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Temperature</th>
+                                <th>Weather Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+                
+                <div class="chatbot-section">
+                    <h2>Ask WeatherBot</h2>
+                    <div class="chatbot">
+                        <div class="chatbox">
+                            <p id="chat-answer">Answers will appear here...</p>
+                        </div>
+                        <div class="ask-button">
+                            <input type="text" id="chat-input" placeholder="Ask a weather-related question..." />
+                            <button>Ask</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="table_script.js"></script>
+    <script src="bot.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">Weather App</div>
+            <nav>
+                <div><a href="#" id="dashboard-link">Dashboard</a></div>
+                <div> <a href="table.html" id="tables-link">Tables</a></div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <input type="text" id="city-input" placeholder="Search city..." />
+                <button onclick="getWeather()">Get Weather</button>
+            </div>
+
+            <!-- Weather Widget -->
+            <div id="weather-widget" class="weather-widget">
+                <div class="overlay"></div>
+                <h2 id="city-name">City Name</h2>
+                <p id="weather-desc">Weather Description</p>
+                <p id="temperature">Temperature</p>
+                <p id="humidity">Humidity</p>
+                <p id="wind-speed">Wind Speed</p>
+            </div>
+            
+
+            <!-- 5-Day Forecast -->
+            <div class="forecast-container" id="forecast-container">
+                <h3>5-Day Weather Forecast</h3>
+                <div class="forecast-grid" id="forecast-grid"></div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="charts">
+                <canvas id="barChart" width="100" height="300"></canvas>
+                <canvas id="doughnutChart" width="100" height="300"></canvas>
+                <canvas id="lineChart" width="100" height="300"></canvas>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
